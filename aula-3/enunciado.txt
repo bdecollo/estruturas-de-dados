@@ -1,0 +1,34 @@
+Análise do enunciado
+
+OBJETIVO: 
+
+realizar cadastro de clientes utilizando arquivo de registros 
+variáveis.
+
+- Ordenado por CPF
+- Com remoção e reindexação
+
+(cpf|nome|sobrenome)
+
+implementar o sistema em clientes.bin
+
+REGRAS:
+
+1. Inserção ordenada sem duplicatas (seguir lógica merge).
+
+2. Remoção física (não lógica) com reordenação. Pular registro
+que será removido ao invés de intercalar um novo.
+
+3. Tudo passa pelo temp. Não pode ser in-place. Alteração de
+nome/sobrenome/telefone/cidade é permitida, podendo ter
+tamanho diferente.
+
+4. Busca binária POR ÍNDICE DE REGISTRO.
+
+    1. Montar índice em memória (array de long com offsets ao
+    início de cada registro, percorrendo uma vez sequencialmente)
+    2. Busca binária nesse array de offsets (fseek)
+
+5. Dado clientes.bin e importados.bin, implementar função que
+gere clientes_merged.bin com todos os registros ordenados, sem
+reler nenhum arquivo mais de uma vez inteiro.
